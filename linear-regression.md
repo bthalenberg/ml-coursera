@@ -40,3 +40,15 @@ pelo mesmo motivo.
 Combinando as duas, temos:
 
 $x_j^{(i)} = \frac{x_j^{(i)} - \mu_j}{max(x_j) - min(x_j)}$
+
+## Regressão polinomial
+
+Basicamente a mesma coisa, é mais uma questão de _feature engineering_.
+
+## Resolvendo analiticamente
+
+Ao invés de resolver por _gradient descent_, podemos resolver analiticamente, resolvendo
+
+$\theta = (X^TX)^{-1}X^Ty$.
+
+Esse método deve ser preferido quando o número de features é pequeno (n $<$ 10.000). Raramente, $X^TX$ não será inversível. Remover _features_ redundantes deve resolver, mas além disso há funções que calculam a pseudo-inversa numericamente.
