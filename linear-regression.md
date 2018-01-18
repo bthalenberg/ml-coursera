@@ -28,7 +28,7 @@ $h_\theta(x) = \theta^Tx$
 
 $J(\theta) = \frac{1}{2m} \sum\limits_{i=1}^m (h_\theta(x) - y)^2$
 
-$\theta_j -= \alpha\frac{1}{m}\sum\limits_{i=1}^m (h_\theta(x^{(i)})- y^{(i)})x_j^{(i)}$, onde $x^{(i)}$
+$\theta_j \leftarrow \theta_j - \alpha\frac{1}{m}\sum\limits_{i=1}^m (h_\theta(x^{(i)})- y^{(i)})x_j^{(i)}$, onde $x^{(i)}$
 são os valores assumidos pelas features do $i$-ésimo exemplo e $x_j^{(i)}$ o valor da $j$-ésima feature.
 
 ## Otimizando o _gradient descent_
