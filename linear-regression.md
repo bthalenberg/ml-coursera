@@ -52,3 +52,19 @@ Ao invés de resolver por _gradient descent_, podemos resolver analiticamente, r
 $\theta = (X^TX)^{-1}X^Ty$.
 
 Esse método deve ser preferido quando o número de features é pequeno (n $<$ 10.000). Raramente, $X^TX$ não será inversível. Remover _features_ redundantes deve resolver, mas além disso há funções que calculam a pseudo-inversa numericamente.
+
+## Regularização
+
+Função custo regularizada:
+
+$J(\theta) = \frac{1}{2m}[\sum\limits_{i=1}^m (h_{\theta}(x{(i)}) - y^{(i)})^2 + \lambda \sum \limits_{j=1}^n \theta_j^2]$, onde $\lambda$ é o parâmetro de regularização.
+
+O algoritmo do gradiente descendente fica:
+
+$\theta_0 \leftarrow \theta_0 - \frac{\alpha}{m}\sum\limits_{i=1}^m [(h_\theta(x^{(i)})- y^{(i)})x_0^{(i)}]$
+
+$\theta_j \leftarrow \theta_j - \alpha [\frac{1}{m}\sum\limits_{i=1}^m [(h_\theta(x^{(i)})- y^{(i)})x_j^{(i)} + \frac{\lambda}{m}\theta_j]$
+
+A equação normal fica:
+
+$\theta = (X^TX + \lambda L)^-1XTy$, onde $L$ é uma matriz com 0 no topo esquerdo, 1 no resto da diagonal principal e 0 em todo o resto, e dimensão $(n+1)\times(n+1)$.
