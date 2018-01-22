@@ -4,7 +4,7 @@ Problema de classificação binária. Definimos $h_{\theta}(x) = P(y = 1 | x; \t
 
 $h_{\theta}(x) = g(\theta^Tx)$, sendo que $g(z) = \frac{1}{1 + e^{-z}}$. Portanto,
 
-$h_{\theta}(x) = frac{1}{1 + e^{-\theta^Tx}}$.
+$h_{\theta}(x) = \frac{1}{1 + e^{-\theta^Tx}}$.
 
 ## Fronteira de decisão (_decision boundary_)
 
