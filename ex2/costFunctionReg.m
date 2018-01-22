@@ -21,12 +21,14 @@ grad = zeros(size(theta));
 z = X * theta;
 h_theta = sigmoid(z);
 
-J = sum(-y' * log(h_theta) - (1 - y)' * log (1 - h_theta)) / m + (lambda / (2 * m)) * sum(theta .^ 2);
+red = -y' * log(h_theta);
+blue = (1 - y)' * log (1 - h_theta);
+theta(1) = 0;
+J = ((1 / m) * (red - blue)) + (lambda / (2 * m)) * (theta' * theta);
 grad = (h_theta' * X - y' * X) / m;
 
-for i=2:size(theta,2)
-  grad(i) += (lambda/m) * theta(i);
- end
+grad += (lambda/m) * theta';
+
 
 
 
