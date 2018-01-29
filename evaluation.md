@@ -46,3 +46,11 @@ If you have a high variance, cross-validation and training set will have the sam
 
 * Lower-order polynomials (low model complexity) have high bias and low variance. In this case, the model fits poorly consistently.
 * Higher-order polynomials (high model complexity) fit the training data extremely well and the test data extremely poorly. These have low bias on the training data, but very high variance.
+
+## Skewed classes
+
+* Ratio of one class over another is very low, accuracy is no longer a good metric for errors.
+* Precision/recall: set up a confusion matrix with true positives, false positives, true negatives and false negatives.
+    * Precision: true positives / (true positives + false positives);
+    * Recall: true positives / (true positives + false negatives).
+* $F_1$ score: 2 * precision * recall / (precision + recall);
